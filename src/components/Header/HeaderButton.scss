@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 64px;
+  padding-right: 0px;
+
+  nav {
+    height: fit-content;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+
+      div {
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        flex: -1;
+        justify-content: center;
+        align-items: center;
+
+        .title {
+          display: block;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: 0;
+          padding: 5px 15px;
+
+          h3 {
+            line-height: 0;
+          }
+        }
+      }
+    }
+
+    .current {
+      color: #8582C7;
+    }
+
+    :hover {
+      .title {
+        background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #8582C777);
+      }
+    }
+  }
+}

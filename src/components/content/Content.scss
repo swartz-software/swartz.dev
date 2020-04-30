@@ -1,0 +1,14 @@
+.content-item {
+  height: 544px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

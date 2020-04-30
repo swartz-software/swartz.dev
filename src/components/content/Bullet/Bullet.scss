@@ -1,0 +1,15 @@
+.bullet {
+  display: flex;
+  align-items: center;
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    vertical-align: center;
+  }
+
+  div {
+    margin-left: 16px;
+    display: flex;
+  }
+}

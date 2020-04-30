@@ -1,0 +1,25 @@
+.content {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.background {
+  position: absolute;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  top: 128px;
+  left: 64px;
+  right: 64px;
+  z-index: -1;
+  line-height: 0;
+
+  svg {
+    margin-top: -1px;
+    width: 100%;
+  }
+}
+
+.background-content {
+  display: flex;
+}
