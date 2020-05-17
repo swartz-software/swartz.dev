@@ -1,33 +1,32 @@
 import React from 'react';
 
 import './Home.scss';
-
-const helloWorld = [
-  'Hello, world!',
-  'Bonjour le monde!',
-  'Hallo Welt!',
-  '¡Hola Mundo!',
-];
+import { useColor, useMode } from 'Theme';
+import { Bullet, Content } from 'components/content';
 
 export default () => {
+  const mode = useMode();
+  const { primaryLight, primary, primaryDark } = useColor();
+
   return (
-    <div className={'home'} id={'home'}>
-      <h1>
-        {helloWorld[Math.floor(Math.random() * Math.floor(helloWorld.length))]}
-      </h1>
-      <h4>I'm Ian.</h4>
-      <p>I come from the small town of Creston, British Columbia.</p>
-      <p>
-        I'm a student at Thompson Rivers University, where I've studied two
-        years of chemistry and two years of computer science. I'm currently in
-        the process of finishing my BSc, majoring in comp sci.
-      </p>
-      <p>
-        I also run my own company,{' '}
-        <a href={'https://swartz.dev'}>Swartz Software Development</a>. We offer
-        full stack development services on a contract basis and additionally
-        have a couple of in-house projects.
-      </p>
-    </div>
+    <Content align={'left'} id={'home'} title={'Main Bullet Points'}>
+      <Bullet
+        color={mode === 'dark' ? primaryDark : primaryLight}
+        position={0}
+        size={'full'}
+        title={'Mobile'}>
+        Foo bar
+      </Bullet>
+      <Bullet color={primary} position={0} size={'full'} title={'Desktop'}>
+        hello world
+      </Bullet>
+      <Bullet
+        color={mode === 'dark' ? primaryLight : primaryDark}
+        position={0}
+        size={'full'}
+        title={'Web'}>
+        hello world
+      </Bullet>
+    </Content>
   );
 };

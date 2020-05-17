@@ -1,18 +1,38 @@
 import React from 'react';
 
+import { useColor, useMode } from 'Theme';
+import { Bullet, Content } from 'components/content';
+
 export default () => {
+  const mode = useMode();
+  const { complementLight, complement, complementDark } = useColor();
+
   return (
-    <div id={'about'}>
-      <h1>About</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et leo
-        elit. Nulla luctus hendrerit nisi, eget scelerisque libero pretium ut.
-        In in pulvinar ipsum. Nullam vel elit id eros blandit dignissim. Donec
-        iaculis, purus nec porta fermentum, mauris leo auctor turpis, semper
-        pretium ex eros gravida ex. Curabitur pulvinar risus eu velit auctor
-        fermentum. Integer sollicitudin eleifend mi, in tincidunt risus auctor
-        in. Quisque vehicula lacus nunc, eu vehicula lectus sollicitudin et.
-      </p>
-    </div>
+    <Content align={'right'} id={'about'} title={'About Us'}>
+      <Bullet
+        align={'right'}
+        color={mode === 'dark' ? complementDark : complementLight}
+        position={0}
+        size={'full'}
+        title={'Mobile'}>
+        hello world
+      </Bullet>
+      <Bullet
+        align={'right'}
+        color={complement}
+        position={0}
+        size={'full'}
+        title={'Desktop'}>
+        hello world
+      </Bullet>
+      <Bullet
+        align={'right'}
+        color={mode === 'dark' ? complementLight : complementDark}
+        position={0}
+        size={'full'}
+        title={'Web'}>
+        hello world
+      </Bullet>
+    </Content>
   );
 };

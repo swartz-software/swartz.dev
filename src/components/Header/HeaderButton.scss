@@ -41,13 +41,9 @@
       }
     }
 
-    .current {
-      color: #8582C7;
-    }
-
     :hover {
       .title {
-        background-image: linear-gradient(#ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #8582C777);
+        color: #8582C7;
       }
     }
   }

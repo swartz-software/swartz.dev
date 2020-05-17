@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 
 import './Background.scss';
+import { useColor } from 'Theme';
 import { HeaderButton, Name, SpecialButton } from 'components';
 import { ContentElement } from 'components/content';
 
@@ -22,6 +23,7 @@ const CurvedCorner = ({
   y2,
   orientation,
   radius,
+  color,
 }: {
   x1: number;
   y1: number;
@@ -29,15 +31,18 @@ const CurvedCorner = ({
   y2: number;
   orientation: number;
   radius: number;
-}) => (
-  <path
-    d={`M ${x1} ${y1} A ${radius} ${radius} 0 0 ${orientation} ${x2} ${y2}`}
-    fill="none"
-    stroke="black"
-    stroke-width="1"
-    strokeDasharray={'4 2'}
-  />
-);
+  color: string;
+}) => {
+  return (
+    <path
+      d={`M ${x1} ${y1} A ${radius} ${radius} 0 0 ${orientation} ${x2} ${y2}`}
+      fill="none"
+      stroke={color}
+      stroke-width="1"
+      strokeDasharray={'4 2'}
+    />
+  );
+};
 
 const getContentVars = (
   side: 'left' | 'right',
@@ -117,6 +122,7 @@ const ContentLine = ({
     lineY1,
     lineY2,
   } = getContentVars(side, top ?? false, size, radius, backgroundWidth);
+  const { highlight } = useColor();
 
   return (
     <div
@@ -128,6 +134,7 @@ const ContentLine = ({
       }}>
       <svg height={height} width={width}>
         <CurvedCorner
+          color={highlight}
           orientation={cornerOrientation}
           radius={radius}
           x1={cornerX1}
@@ -137,7 +144,7 @@ const ContentLine = ({
         />
         <line
           style={{
-            stroke: 'rgb(0,0,0)',
+            stroke: highlight,
             strokeWidth: 1,
           }}
           x1={lineX1}
@@ -154,6 +161,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
   const titleLength = title.length * 36;
   const nContent = children instanceof Array ? children.length : 1;
   const [width, setWidth] = useState(window.innerWidth);
+  const { highlight } = useColor();
 
   useLayoutEffect(() => {
     const updateWidth = () => setWidth(window.innerWidth);
@@ -187,7 +195,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
         <svg className={'background-header'} height={96}>
           <line
             style={{
-              stroke: 'rgb(0,0,0)',
+              stroke: highlight,
               strokeWidth: 1,
             }}
             x1={0}
@@ -197,7 +205,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
           />
           <line
             style={{
-              stroke: 'rgb(0,0,0)',
+              stroke: highlight,
               strokeWidth: 1,
             }}
             x1={0}
@@ -207,7 +215,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
           />
           <line
             style={{
-              stroke: 'rgb(0,0,0)',
+              stroke: highlight,
               strokeWidth: 1,
             }}
             x1={titleLength}
@@ -217,7 +225,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
           />
           <line
             style={{
-              stroke: 'rgb(0,0,0)',
+              stroke: highlight,
               strokeWidth: 1,
             }}
             x1={titleLength / 2}
@@ -226,6 +234,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
             y2={64}
           />
           <CurvedCorner
+            color={highlight}
             orientation={1}
             radius={32}
             x1={titleLength / 2}
@@ -235,7 +244,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
           />
           <line
             style={{
-              stroke: 'rgb(0,0,0)',
+              stroke: highlight,
               strokeWidth: 1,
             }}
             x1={32}
@@ -268,7 +277,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
           <svg className={'background-content content-1'} height={512}>
             <line
               style={{
-                stroke: 'rgb(0,0,0)',
+                stroke: highlight,
                 strokeWidth: 1,
               }}
               x1={0}
@@ -278,7 +287,7 @@ export default ({ title, headerLinks, specialLink, children }: Props) => {
             />
             <line
               style={{
-                stroke: 'rgb(0,0,0)',
+                stroke: highlight,
                 strokeWidth: 1,
               }}
               x1={0}

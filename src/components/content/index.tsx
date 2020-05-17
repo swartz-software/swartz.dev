@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { useColor } from 'Theme';
+
 import { Bullet, BulletType } from './Bullet';
 import { Custom, CustomType } from './Custom';
 import { Display, DisplayType } from './Display';
 import { InlineImage, InlineImageType } from './InlineImage';
 import { Mosaic, MosaicType } from './Mosaic';
+
 import './Content.scss';
 
 export { Bullet, Custom, Display, InlineImage, Mosaic };
@@ -34,8 +37,16 @@ export const Content: ContentType = ({
   align,
   children,
 }: ContentProps) => {
+  const { textBackground } = useColor();
+
   return (
-    <div className={'content-item'} id={id} style={{ alignItems: align }}>
+    <div
+      className={'content-item'}
+      id={id}
+      style={{
+        color: textBackground,
+        alignItems: align,
+      }}>
       {title && (
         <h2
           className={'content-title'}
@@ -60,6 +71,7 @@ export const Arrow = ({
   length: number;
   direction: 'left' | 'right' | 'down';
 }) => {
+  const { highlight } = useColor();
   const startX = direction === 'left' ? 0 : direction === 'right' ? length : 9;
   const startY = direction === 'down' ? 0 : 10;
   const endX = direction === 'left' ? length : direction === 'right' ? 0 : 9;
@@ -84,7 +96,7 @@ export const Arrow = ({
       width={direction === 'down' ? 18 : length}>
       <line
         style={{
-          stroke: 'rgb(0,0,0)',
+          stroke: highlight,
           strokeWidth: 1,
         }}
         x1={startX}
@@ -94,7 +106,7 @@ export const Arrow = ({
       />
       <line
         style={{
-          stroke: 'rgb(0,0,0)',
+          stroke: highlight,
           strokeWidth: 1,
         }}
         x1={point1X}
@@ -104,7 +116,7 @@ export const Arrow = ({
       />
       <line
         style={{
-          stroke: 'rgb(0,0,0)',
+          stroke: highlight,
           strokeWidth: 1,
         }}
         x1={point1X}
@@ -114,7 +126,7 @@ export const Arrow = ({
       />
       <line
         style={{
-          stroke: 'rgb(0,0,0)',
+          stroke: highlight,
           strokeWidth: 1,
         }}
         x1={point1X}

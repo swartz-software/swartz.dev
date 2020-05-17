@@ -1,6 +1,14 @@
-.bullet {
+.bullet-container {
   display: flex;
   align-items: center;
+}
+
+.bullet {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
 
   h1, h2, h3, h4, h5, h6, p {
     margin-block-start: 0;
@@ -9,7 +17,6 @@
   }
 
   div {
-    margin-left: 16px;
     display: flex;
   }
 }

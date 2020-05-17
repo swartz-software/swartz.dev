@@ -30,7 +30,7 @@ export type Theme = {
     textBackgroundAlt: string;
   };
 };
-export const LightTheme: Theme = {
+export const OldLightTheme: Theme = {
   mode: 'light',
   colors: {
     primaryLight: '#C19594',
@@ -60,7 +60,7 @@ export const LightTheme: Theme = {
     textBackgroundAlt: '#7A64A5',
   },
 };
-export const DarkTheme: Theme = {
+export const OldDarkTheme: Theme = {
   mode: 'dark',
   colors: {
     primaryLight: '#A56363',
@@ -87,6 +87,66 @@ export const DarkTheme: Theme = {
     textDisabled: '#BBBBBB',
     textWarning: '#FFFFFF',
     textBackground: '#FFFFFF',
+    textBackgroundAlt: '#A395C1',
+  },
+};
+export const LightTheme: Theme = {
+  mode: 'light',
+  colors: {
+    primaryLight: '#C19594',
+    primary: '#A56363',
+    primaryDark: '#744344',
+    complementLight: '#A395C1',
+    complement: '#7A64A5',
+    complementDark: '#534373',
+    analogLight: '#96A4C1',
+    analog: '#6479A5',
+    analogDark: '#435474',
+    highlight: '#64A565',
+    disabled: '#808080',
+    warning: '#CC3F34',
+    background: '#E5E5E5',
+    backgroundAlt: '#B8B8B8',
+    textPrimaryLight: '#FFFFFF',
+    textPrimary: '#000000',
+    textComplementLight: '#FFFFFF',
+    textComplement: '#000000',
+    textAnalogLight: '#FFFFFF',
+    textAnalog: '#000000',
+    textHighlight: '#FFFCF9',
+    textDisabled: '#FFFCF9',
+    textWarning: '#FFFCF9',
+    textBackground: '#000000',
+    textBackgroundAlt: '#7A64A5',
+  },
+};
+export const DarkTheme: Theme = {
+  mode: 'dark',
+  colors: {
+    primaryLight: '#84708C',
+    primary: '#654F6F',
+    primaryDark: '#553F5E',
+    complementLight: '#7C7CA4',
+    complement: '#5C5D8D',
+    complementDark: '#4A4A79',
+    analogLight: '#F28D9D',
+    analog: '#EF798A',
+    analogDark: '#CB616E',
+    highlight: '#3083DC',
+    disabled: '#666666',
+    warning: '#F93943',
+    background: '#3C3C3C',
+    backgroundAlt: '#2A2A2A',
+    textPrimaryLight: '#FFFCF9',
+    textPrimary: '#FFFCF9',
+    textComplementLight: '#FFFCF9',
+    textComplement: '#FFFCF9',
+    textAnalogLight: '#FFFCF9',
+    textAnalog: '#FFFCF9',
+    textHighlight: '#FFFCF9',
+    textDisabled: '#BBBBBB',
+    textWarning: '#FFFCF9',
+    textBackground: '#FFFCF9',
     textBackgroundAlt: '#A395C1',
   },
 };
